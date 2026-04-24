@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Deletion Request – GPS AI</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #222; }
+    header { background: #1877f2; color: #fff; padding: 24px 40px; }
+    header h1 { font-size: 28px; }
+    header p { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+    main { max-width: 640px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    h2 { font-size: 22px; margin-bottom: 12px; color: #1877f2; }
+    p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 16px; }
+    label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #333; }
+    input, textarea, select {
+      width: 100%; padding: 12px 14px; border: 1px solid #ddd;
+      border-radius: 8px; font-size: 15px; margin-bottom: 18px;
+      transition: border 0.2s;
+    }
+    input:focus, textarea:focus { outline: none; border-color: #1877f2; }
+    textarea { resize: vertical; min-height: 100px; }
+    button {
+      background: #1877f2; color: #fff; border: none;
+      padding: 13px 28px; border-radius: 8px; font-size: 16px;
+      cursor: pointer; width: 100%; transition: background 0.2s;
+    }
+    button:hover { background: #1558b0; }
+    .info-box {
+      background: #eef4ff; border-left: 4px solid #1877f2;
+      padding: 14px 18px; border-radius: 6px; margin-bottom: 24px;
+      font-size: 14px; color: #444;
+    }
+    .success { display: none; text-align: center; padding: 30px 0; }
+    .success h3 { color: #28a745; font-size: 22px; margin-bottom: 10px; }
+    .success p { color: #555; }
+    footer { text-align: center; padding: 24px; font-size: 13px; color: #999; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GPS AI</h1>
+    <p>Data Deletion Request</p>
+  </header>
+  <main>
+    <h2>Request Your Data Deletion</h2>
+    <p>You have the right to request deletion of all personal data GPS AI holds about you. Fill out the form below and we will process your request within <strong>30 days</strong>.</p>
+
+    <div class="info-box">
+      <strong>What gets deleted:</strong> Your account info, Meta access tokens, ad campaign history, and all associated data stored by GPS AI.
+    </div>
+
+    <form id="deletionForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your full name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Email linked to your GPS AI account" required />
+
+      <label for="fb_id">Facebook User ID (optional)</label>
+      <input type="text" id="fb_id" placeholder="e.g. 100012345678901" />
+
+      <label for="reason">Reason for deletion (optional)</label>
+      <select id="reason">
+        <option value="">-- Select a reason --</option>
+        <option value="no_longer_using">No longer using the app</option>
+        <option value="privacy_concern">Privacy concern</option>
+        <option value="switching_tool">Switching to another tool</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="message">Additional comments (optional)</label>
+      <textarea id="message" placeholder="Any additional information..."></textarea>
+
+      <button type="submit">Submit Deletion Request</button>
+    </form>
+
+    <div class="success" id="successMsg">
+      <h3>✓ Request Submitted</h3>
+      <p>We have received your data deletion request.<br/>You will receive a confirmation at your email within <strong>48 hours</strong>.<br/>Deletion will be completed within <strong>30 days</strong>.</p>
+    </div>
+
+    <p style="margin-top: 24px; font-size: 13px; color: #888;">
+      You can also email us directly at <strong>saadsumra36@gmail.com</strong> with subject line "Data Deletion Request".
+    </p>
+  </main>
+  <footer>&copy; 2026 GPS AI. All rights reserved.</footer>
+
+  <script>
+    document.getElementById('deletionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+      // In production: send form data to your backend API here
+    });
+  </script>
+</body>
+</html>
